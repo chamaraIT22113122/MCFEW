@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { getAssetPath } from '../utils/path';
 
-export default function ThreeDCarousel({ items, autoRotate = true, rotateInterval = 4000, cardHeight = 400 }) {
+export default function ThreeDCarousel({ items, autoRotate = true, rotateInterval = 4000, cardHeight = 460 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const length = items.length;
   
-  const radius = length > 0 ? Math.max(300, (350 / 2) / Math.tan(Math.PI / length)) : 0;
+  // Increased base width and radius multiplier to "expand it more"
+  const radius = length > 0 ? Math.max(400, (450 / 2) / Math.tan(Math.PI / length)) : 0;
 
   useEffect(() => {
     if (!autoRotate || length <= 1 || isHovered) return;
@@ -24,7 +25,7 @@ export default function ThreeDCarousel({ items, autoRotate = true, rotateInterva
   return (
     <div 
       className="relative flex justify-center items-center w-full py-10"
-      style={{ height: cardHeight + 100, perspective: '1200px' }}
+      style={{ height: cardHeight + 100, perspective: '1500px' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -46,6 +47,9 @@ export default function ThreeDCarousel({ items, autoRotate = true, rotateInterva
           
           const isActive = distance === 0;
 
+          // Default image to avatar.jpg if none provided
+          const imageSrc = item.imageUrl || item.image || '/assets/avatar.jpg';
+
           return (
             <div
               key={item.id || i}
@@ -57,28 +61,23 @@ export default function ThreeDCarousel({ items, autoRotate = true, rotateInterva
                 transform: `rotateY(${rotateY}deg) translateZ(${radius}px)`,
               }}
             >
-              <div className="h-48 relative overflow-hidden bg-black/50">
-                {item.imageUrl || item.image ? (
-                  <img 
-                    src={getAssetPath(item.imageUrl || item.image)} 
-                    alt={item.title || item.name} 
-                    className="w-full h-full object-cover opacity-80" 
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-green-brand/10 text-green-brand font-display text-4xl">
-                    {(item.title || item.name || 'MC').substring(0,2).toUpperCase()}
-                  </div>
-                )}
+              {/* Increased height to h-64 and used object-contain so full image is seen without cropping */}
+              <div className="h-64 relative flex items-center justify-center bg-dark-2">
+                <img 
+                  src={getAssetPath(imageSrc)} 
+                  alt={item.title || item.name} 
+                  className="w-full h-full object-contain p-2" 
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent" />
               </div>
 
-              <div className="p-6 relative z-10 flex flex-col items-center text-center">
+              <div className="p-6 relative z-10 flex flex-col items-center text-center -mt-4">
                 <h3 className="font-display font-bold text-xl text-white mb-1">{item.title || item.name}</h3>
-                <div className="text-green-light text-sm font-semibold mb-4">{item.brand || item.role}</div>
+                <div className="text-green-light text-sm font-semibold mb-3">{item.brand || item.role}</div>
                 <p className="text-white/60 text-sm line-clamp-4">{item.description || item.exp}</p>
                 
                 {item.tags && (
-                  <div className="mt-6 flex flex-wrap justify-center gap-2">
+                  <div className="mt-4 flex flex-wrap justify-center gap-2">
                     {item.tags.map((tag, idx) => (
                       <span key={idx} className="text-[10px] px-2 py-1 rounded-full border border-white/10 text-white/40 uppercase tracking-wider">
                         {tag}
