@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
 import { getAssetPath } from '../utils/path';
+import CountUp from 'react-countup';
 import ThreeDCarousel from '../components/ThreeDCarousel';
 
 function SLabel({ children }) {
@@ -120,6 +121,28 @@ export default function About() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Counters */}
+      <section className="py-16 bg-dark-card border-y border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5">
+            {[
+              { num: 50, suffix: '+', label: 'Projects Delivered' },
+              { num: 20, suffix: '+', label: 'Happy Clients' },
+              { num: 3,  suffix: '',  label: 'Countries Reached' },
+              { num: 4,  suffix: '+', label: 'Years of Excellence' }
+            ].map((stat, i) => (
+              <div key={i} className="flex flex-col items-center justify-center text-center p-4">
+                <div className="font-display font-black text-4xl lg:text-5xl text-white mb-2">
+                  <CountUp end={stat.num} duration={2.5} enableScrollSpy scrollSpyOnce />
+                  <span className="text-green-brand">{stat.suffix}</span>
+                </div>
+                <div className="text-xs font-display font-bold text-white/50 uppercase tracking-widest">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
