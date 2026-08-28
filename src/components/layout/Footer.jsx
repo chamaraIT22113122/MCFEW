@@ -21,15 +21,15 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-black border-t border-white/8 pt-20 pb-0">
+    <footer className="bg-black border-t border-white/8 pt-10 pb-0">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-white/8">
 
           {/* Brand */}
-          <div className="col-span-1 md:col-span-4">
-            <img src={getAssetPath('/logo.png')} alt="MCFEW Consultants" className="h-16 w-auto mb-5 rounded-md" />
-            <p className="text-white/60 text-sm leading-relaxed max-w-sm mb-6">{settings.footerDesc}</p>
-            <div className="flex gap-3">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2">
+            <img src={getAssetPath('/logo.png')} alt="MCFEW Consultants" className="h-12 w-auto mb-4 rounded-md" />
+            <p className="text-white/60 text-xs leading-relaxed max-w-sm mb-5">{settings.footerDesc}</p>
+            <div className="flex gap-2">
               {[
                 { href: settings.facebook,  label: 'Facebook',  icon: 'f' },
                 { href: settings.instagram, label: 'Instagram', icon: 'in' },
@@ -52,9 +52,9 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-display font-700 text-sm uppercase tracking-widest text-white/50 mb-5">Quick Links</h4>
-            <ul className="flex flex-col gap-2.5">
+          <div className="col-span-1">
+            <h4 className="font-display font-700 text-xs uppercase tracking-widest text-white/50 mb-4">Quick Links</h4>
+            <ul className="flex flex-col gap-2">
               {quickLinks.map(({ to, label }) => (
                 <li key={to}>
                   <Link to={to} className="text-sm text-white/60 hover:text-green-light transition-colors duration-200">
@@ -66,9 +66,9 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
-            <h4 className="font-display font-700 text-sm uppercase tracking-widest text-white/50 mb-5">Services</h4>
-            <ul className="flex flex-col gap-2.5">
+          <div className="col-span-1">
+            <h4 className="font-display font-700 text-xs uppercase tracking-widest text-white/50 mb-4">Services</h4>
+            <ul className="flex flex-col gap-2">
               {services.map(s => (
                 <li key={s} className="text-sm text-white/60">{s}</li>
               ))}
@@ -76,9 +76,9 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-display font-700 text-sm uppercase tracking-widest text-white/50 mb-5">Contact Us</h4>
-            <div className="flex flex-col gap-4">
+          <div className="col-span-1">
+            <h4 className="font-display font-700 text-xs uppercase tracking-widest text-white/50 mb-4">Contact Us</h4>
+            <div className="flex flex-col gap-3">
               {[
                 { icon: '📍', text: settings.address },
                 { icon: '📞', text: `${settings.phone1} / ${settings.phone2}` },
