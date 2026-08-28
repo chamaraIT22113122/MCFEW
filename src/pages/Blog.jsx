@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
 import { getAssetPath } from '../utils/path';
+import GlowCard from '../components/GlowCard';
 
 function SLabel({ children }) {
   return <span className="inline-block text-xs font-display font-bold tracking-widest uppercase text-green-light mb-3">{children}</span>;
@@ -53,14 +54,13 @@ export default function Blog() {
             {/* Posts */}
             <div className="lg:col-span-2 flex flex-col gap-8">
               {blog.posts.map((post, i) => (
-                <article key={post.id}
-                  className={`reveal group flex flex-col rounded-2xl border border-white/8 bg-dark-card
-                               hover:border-green-brand/40 overflow-hidden card-hover`}>
+                <GlowCard key={post.id}
+                  className={`reveal group flex flex-col overflow-hidden card-hover`}>
                   <div className="h-64 overflow-hidden relative">
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent z-10 opacity-60" />
                     <img src={getAssetPath(post.image || '/hero.png')} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0" />
                   </div>
-                  <div className="p-8">
+                  <div className="p-8 relative z-20">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="text-xs text-white/30">{post.date}</span>
                       <span className="px-3 py-1 rounded-full bg-green-brand/10 border border-green-brand/20 text-xs font-display font-bold text-green-light uppercase tracking-wider">
@@ -73,7 +73,7 @@ export default function Blog() {
                       Read Full Article <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </button>
                   </div>
-                </article>
+                </GlowCard>
               ))}
             </div>
 

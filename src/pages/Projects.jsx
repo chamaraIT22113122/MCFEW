@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
 import { getAssetPath } from '../utils/path';
+import GlowCard from '../components/GlowCard';
 
 function SLabel({ children }) {
   return <span className="inline-block text-xs font-display font-bold tracking-widest uppercase text-green-light mb-3">{children}</span>;
@@ -112,30 +113,27 @@ export default function Projects() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((p, i) => (
-              <div key={p.id}
-                className={`reveal reveal-delay-${(i % 3) + 1} group rounded-2xl border border-white/8 bg-dark-card
-                             hover:border-green-brand/40 card-hover overflow-hidden flex flex-col`}>
-                <div className="h-48 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent z-10 opacity-60" />
-                  <img src={getAssetPath(p.image || '/hero.png')} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <div className="p-7 flex-1 flex flex-col relative z-20">
-                  <span className="text-xs font-display font-bold text-green-light uppercase tracking-wider">{p.category}</span>
-                  <h3 className="font-display font-bold text-lg mt-1.5 mb-2 leading-tight">{p.title}</h3>
-                  <p className="text-sm text-white/55 leading-relaxed mb-4 flex-1">{p.desc}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {(p.tags || '').split(',').map(tag => (
-                      <span key={tag.trim()} className="px-3 py-1 rounded-full bg-white/5 border border-white/8 text-xs text-white/45">
-                        {tag.trim()}
-                      </span>
-                    ))}
-                  </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filtered.map((project, i) => (
+            <GlowCard key={project.id}
+              className={`reveal reveal-delay-${(i % 3) + 1} group flex flex-col p-6 h-full`}>
+              <div className="h-56 overflow-hidden relative rounded-xl mb-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent z-10 opacity-50" />
+                <img src={getAssetPath(project.image || '/hero.png')} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0" />
+              </div>
+              <div className="flex-1 flex flex-col relative z-20">
+                <div className="text-xs font-display font-bold text-green-light uppercase tracking-wider mb-2">{project.category}</div>
+                <h3 className="font-display font-bold text-xl mb-3 leading-tight group-hover:text-green-brand transition-colors">{project.title}</h3>
+                <p className="text-sm text-white/60 leading-relaxed mb-6 flex-1">{project.desc}</p>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {(project.tags ? project.tags.split(',') : []).map(tag => (
+                    <span key={tag} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/50">{tag.trim()}</span>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+            </GlowCard>
+          ))}
+        </div>
         </div>
       </section>
 

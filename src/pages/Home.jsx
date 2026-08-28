@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
 import { getAssetPath } from '../utils/path';
 import { InfiniteMarquee } from '../components/InfiniteMarquee';
+import GlowCard from '../components/GlowCard';
 
 /* ── Reusable section label ── */
 function SLabel({ children }) {
@@ -422,11 +423,8 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {blog.posts.slice(0, 3).map((post, i) => (
-              <div key={post.id}
-                className={`reveal reveal-delay-${i + 1} group flex flex-col p-8 rounded-2xl border border-white/8 bg-dark-card
-                             hover:border-green-brand/40 card-hover relative overflow-hidden`}>
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-green-brand to-green-light
-                                 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <GlowCard key={post.id}
+                className={`reveal reveal-delay-${i + 1} group flex flex-col p-8 card-hover relative overflow-hidden h-full`}>
                 
                 {/* Image Header */}
                 <div className="-mx-8 -mt-8 mb-6 h-48 overflow-hidden relative">
