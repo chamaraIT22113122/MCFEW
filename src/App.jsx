@@ -4,7 +4,6 @@ import { ThemeProvider } from './context/ThemeContext';
 import { ContentProvider } from './context/ContentContext';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import CustomCursor from './components/CustomCursor';
 import Home from './pages/Home';
 import WhatWeDo from './pages/WhatWeDo';
 import About from './pages/About';
@@ -39,7 +38,6 @@ export default function App() {
       <ContentProvider>
         <HashRouter>
           <ScrollToTop />
-          <CustomCursor />
           <Layout>
             <Routes>
               <Route path="/"             element={<Home />}         />
