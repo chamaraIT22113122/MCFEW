@@ -1,21 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { getAssetPath } from '../utils/path';
+import { useInView } from 'framer-motion';
 
 export default function ThreeDCarousel({ items, autoRotate = true, rotateInterval = 4000, cardHeight = 460 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { margin: "0px" });
   const length = items.length;
   
   // Increased base width and radius multiplier to "expand it more"
   const radius = length > 0 ? Math.max(400, (450 / 2) / Math.tan(Math.PI / length)) : 0;
 
   useEffect(() => {
-    if (!autoRotate || length <= 1 || isHovered) return;
+    if (!autoRotate || length <= 1 || isHovered || !isInView) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => prev + 1);
     }, rotateInterval);
     return () => clearInterval(timer);
-  }, [autoRotate, length, rotateInterval, isHovered]);
+  }, [autoRotate, length, rotateInterval, isHovered, isInView]);
 
   const handleNext = () => setCurrentIndex(prev => prev + 1);
   const handlePrev = () => setCurrentIndex(prev => prev - 1);
@@ -24,6 +27,7 @@ export default function ThreeDCarousel({ items, autoRotate = true, rotateInterva
 
   return (
     <div 
+      ref={containerRef}
       className="relative flex justify-center items-center w-full py-10"
       style={{ height: cardHeight + 100, perspective: '1500px' }}
       onMouseEnter={() => setIsHovered(true)}
