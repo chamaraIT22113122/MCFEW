@@ -1,0 +1,103 @@
+// ── Default Content ──────────────────────────────────────────
+export const defaultContent = {
+  settings: {
+    companyName: 'MCFEW Consultants',
+    legalName: 'MCFEW Consultants (Pvt) Ltd',
+    tagline: 'MEP Engineering Design & Consultancy',
+    established: '2021',
+    phone1: '071 5644 618',
+    phone2: '077 4587 296',
+    email: 'info@mcfew.lk',
+    address: 'Dippitigoda Rd, Kelaniya 11600, Sri Lanka',
+    linkedin: 'https://lk.linkedin.com',
+    facebook: 'https://www.facebook.com',
+    instagram: 'https://www.instagram.com',
+    footerDesc: 'MCFEW Consultants (Pvt) Ltd — the solution provider for MEP Engineering Designs for new development projects of any kind.',
+    copyrightYear: new Date().getFullYear().toString(),
+    adminPassword: 'mcfew2024',
+  },
+  home: {
+    heroBadge: 'Est. 2021 · Sri Lanka',
+    heroSubtitle: '"Designing quality products in the era, leading a better life"',
+    heroDesc: "MCFEW Consultants is Sri Lanka's premier MEP engineering consultancy — delivering precision designs from concept to commissioning for world-class developments.",
+    stats: [
+      { id: 1, number: '16+', label: 'Years Experience' },
+      { id: 2, number: '50+', label: 'Projects Delivered' },
+      { id: 3, number: '3',   label: 'Core Pillars' },
+    ],
+    aboutTitle: 'Built on Three Major Pillars',
+    aboutDesc1: "MCFEW Consultants (Pvt) Ltd was established in 2021 to provide world-class MEP consultancy services for new property developments. Our team brings vast hands-on experience from Sri Lanka's most iconic projects including Havelock City Development and Waterfront Properties Development.",
+    aboutDesc2: 'With 16+ years of expertise, we provide end-to-end MEP technical support — from conceptual planning through design, implementation, testing, and commissioning.',
+  },
+  about: {
+    vision: '"Designing quality products in the era, leading a better life"',
+    mission: 'Continuous improvement by innovations in MEP systems design approaches in support with achieving local & international energy goals.',
+    story1: "MCFEW Company was established in 2021 to provide MEP consultancy services for new property developments. Our team has accumulated vast hands-on experience in MEP consultancy works, having actively participated in some of the largest property investments in Sri Lanka — including Havelock City Development and Waterfront Properties Development.",
+    story2: "Our design proposals demonstrate strong technical strength and persistent innovation — investors will get the most economical solution complying with energy conservation requirements and operational efficiency. We are committed to providing valuable creative design and full-process, customized services covering the entire lifecycle of every project.",
+    expertPanel: [
+      { id: 1, image: '/hero.png', name: 'T M Weerakkody',          role: 'Principal / Founder',        quals: 'MEP Consultancy Lead',                            exp: '16+ Years',  isFounder: true  },
+      { id: 2, image: '', name: 'D. C. Wanaguru',          role: 'MEP Design Engineer',         quals: 'B.Sc.(Eng), MIESL · Chartered Engineer',          exp: '18 Years',   isFounder: false },
+      { id: 3, image: '', name: 'Berty Wijesekara',        role: 'HVAC Design Engineer',        quals: 'B.Sc.(Eng), AMIESL',                              exp: '18 Years',   isFounder: false },
+      { id: 4, image: '', name: 'Madushanka',              role: 'Plumbing Design Engineer',    quals: 'B.Sc.(Eng), AMIESL',                              exp: '15 Years',   isFounder: false },
+      { id: 5, image: '', name: 'Daminda',                 role: 'Structural Design Engineer',  quals: 'B.Sc.(Eng), MIESL · Chartered Structural Engineer', exp: '20 Years',  isFounder: false },
+      { id: 6, image: '', name: 'Chathurangani Weerasinghe', role: 'Architect',                quals: 'Chartered Architect',                              exp: '15 Years',   isFounder: false },
+      { id: 7, image: '', name: 'Senthil',                 role: 'Civil Engineer',              quals: 'B.Sc.(Eng), AMIESL',                              exp: '15 Years',   isFounder: false },
+      { id: 8, image: '', name: 'Tharanga',                role: 'Financial Consultant',        quals: 'B.Sc. MGT(sp) USJP, ACA · Chartered Accountant',  exp: '12 Years',   isFounder: false },
+    ],
+    designTeam: [
+      { id: 1, initials: 'QA', name: 'Madushanka', role: 'MEP QA&QC / Draftman',  exp: '15 Years' },
+      { id: 2, initials: 'DR', name: 'Darshana',   role: 'MEP QA&QC / Draftman',  exp: '15 Years' },
+      { id: 3, initials: 'QS', name: 'Nalin',      role: 'Quantity Surveyor',       exp: '20 Years' },
+    ],
+  },
+  projects: {
+    items: [
+      { id: 1, image: '/assets/projects/slide-1-300x169.jpg', category: 'Infrastructure Development', title: 'Victoria Golf Course & Country Resort', desc: 'Power & Water Infrastructure Development at Victoria Golf Course Rajawella. A landmark project by John Keells Properties.', tags: 'John Keells Properties, Rajawella, Infrastructure' },
+      { id: 2, image: '/assets/projects/slide-2-300x169.jpg', category: 'Electrical & ELV Design',   title: 'EBC Shifting — Orion City, Dematagoda',     desc: 'Electrical & ELV Design Consultancy for proposed EBC shifting at Orion City for Ben Holdings (Swarnawahini relocation).',           tags: 'Ben Holdings, Colombo, ELV'            },
+      { id: 3, image: '/assets/projects/slide-3-300x169.jpg', category: 'MEP Consultancy',           title: 'Sunrise Ridge Holiday Homes',               desc: 'Full MEP Consultant role for the Sunrise Ridge Holiday Homes Projects development.',                                               tags: 'Holiday Homes, Resort, MEP'            },
+      { id: 4, image: '/assets/projects/slide-4-300x169.jpg', category: 'Hotel MEP Design',          title: '10-Storey Hotel — Maafushi, Maldives',      desc: 'Proposed MEP Design for a 10-storey hotel building at Maafushi Island, Maldives.',                                                 tags: 'Maldives, Hotel, International'        },
+      { id: 5, image: '/assets/projects/slide-1-300x169.jpg', category: 'Office Interior Fit-out',   title: 'Uber Head Office — Colombo 5',              desc: 'Complete MEP Design & coordination for Uber Head Office fit-out at Colombo 5.',                                                   tags: 'Uber, Colombo 5, Office'              },
+      { id: 6, image: '/assets/projects/slide-2-300x169.jpg', category: 'Interior Fit-out',          title: 'BCD Travels — One Galle Face (L10 & L15)', desc: 'MEP Design for interior fit-out at 10th and 15th Floors at One Galle Face.',                                                      tags: 'One Galle Face, BCD Travels, Premium' },
+    ],
+    energyAudit: [
+      "Energy meters' accuracy verifications of 90 Villas at Victoria Golf and Country Resort at Rajawella",
+      "Electrical Condition Evaluation of A. Baurs Head Office and CWM & IRM factory & offices at Kelaniya",
+      "Electrical Condition Report & Certification of Alumex Prime Plant at Ekala",
+      "Electrical Condition Report for Tea Export Processing Factory under Bogawanthalawa Tea Ceylon",
+      "Certification of St. Sebastian North & South Lock Gates & Pumping Stations (11kV & 3.3kV)",
+      "Certification of Lighting Protection System of proposed Prime Lands Residencies at Edmon Road, Colombo 05",
+    ],
+    clientLogos: [
+      { id: 1, name: 'Client 1', image: '/assets/clients/cl-lg-1-300x233.jpg' },
+      { id: 2, name: 'Client 2', image: '/assets/clients/cl-lg-2-300x233.jpg' },
+      { id: 3, name: 'Client 3', image: '/assets/clients/cl-lg-3-300x233.jpg' },
+      { id: 4, name: 'Client 4', image: '/assets/clients/cl-lg-4_1-300x233.jpg' },
+      { id: 5, name: 'Client 5', image: '/assets/clients/cl-lg-5-300x233.jpg' },
+      { id: 6, name: 'Client 6', image: '/assets/clients/cl-lg-7-300x233.jpg' },
+      { id: 7, name: 'Client 7', image: '/assets/clients/cl-lg-8_1-300x233.jpg' },
+      { id: 8, name: 'Leema', image: '/assets/clients/Leema.png' }
+    ],
+    clients: {
+      developers:  'John Keells Properties\nA. Baurs & Co. (Pvt) Ltd\nWalters Bay Tea Growers (Pvt) Ltd\nSinoceylon Energy Solutions (Pvt) Ltd\nBen Holdings',
+      architects:  'Arch. Dr. Senaka Dharmathilake\nKDS Architects\nLS Architects\nArch Consultants',
+      contractors: 'Leema Creations (Pvt) Ltd',
+    },
+  },
+  blog: {
+    posts: [
+      { id: 1, image: '/assets/BLOG/art_pic_b1.jpg', date: 'March 26, 2022', category: 'MEP Engineering',  title: 'Understanding MEP Systems in High-Rise Buildings',    excerpt: 'High-rise buildings present unique engineering challenges. The mechanical, electrical, and plumbing systems must work in harmony across dozens of floors.',  content: 'High-rise buildings present unique engineering challenges. The mechanical, electrical, and plumbing systems must work in harmony across dozens of floors — requiring precise coordination, rigorous calculations, and smart design decisions from the very start. In this article, we explore the key considerations in MEP engineering for tall structures and how an integrated design approach dramatically reduces costs and improves performance.' },
+      { id: 2, image: '/assets/BLOG/art_pic_b2.jpg', date: 'March 26, 2022', category: 'Energy Efficiency', title: 'Energy Conservation in MEP Design',                   excerpt: "Energy efficiency is no longer optional — it is a core requirement for modern building design. With Sri Lanka's growing energy demands, MEP engineers must design systems that minimize consumption.", content: "Energy efficiency is no longer optional — it is a core requirement for modern building design. With Sri Lanka's growing energy demands and the government's commitment to renewable energy goals, MEP engineers must design systems that minimize consumption while maximizing performance. This article covers practical strategies that MCFEW implements to achieve significant energy savings." },
+      { id: 3, image: '/assets/BLOG/art_pic_b3.jpg', date: 'March 22, 2022', category: 'Company News',     title: 'Welcome to MCFEW Consultants (Pvt) Ltd',               excerpt: 'We are very enthusiastic about sharing our knowledge through this media to make aware of our experience on MEP design and consultancy.',                         content: "We are very enthusiastic about sharing our knowledge through this media to make the industry aware of our experience on MEP design and consultancy. MCFEW was established in 2021 with a clear mission: to provide world-class MEP consultancy services for Sri Lanka's growing property development sector." },
+    ],
+  },
+  consultation: {
+    whyCards: [
+      { id: 1, icon: '🏆', title: '16+ Years Experience',  desc: "Our team has actively participated in the largest property investments of their eras, including Havelock City and Waterfront Properties."          },
+      { id: 2, icon: '👥', title: 'Expert Panel',          desc: 'Chartered engineers, architects, financial consultants, and QA/QC specialists — a complete MEP team under one roof.'                          },
+      { id: 3, icon: '🔄', title: 'End-to-End Service',    desc: 'From initial concept through design, implementation, testing, and commissioning — we support you throughout the entire project lifecycle.'      },
+      { id: 4, icon: '💡', title: 'Optimum Solutions',     desc: 'We provide feasible solutions that match your financial limitations while meeting all energy conservation and operational efficiency requirements.' },
+      { id: 5, icon: '📋', title: 'Authority Support',     desc: "We handle discussions with government authorities to take necessary clearances & approvals, smoothing your project's path to completion."         },
+      { id: 6, icon: '🌍', title: 'International Reach',   desc: 'Our portfolio extends beyond Sri Lanka — including hotel projects in the Maldives and other regional developments.'                            },
+    ],
+  },
+};
