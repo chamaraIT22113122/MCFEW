@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
 import { getAssetPath } from '../utils/path';
+import ThreeDCarousel from '../components/ThreeDCarousel';
 
 function SLabel({ children }) {
   return <span className="inline-block text-xs font-display font-bold tracking-widest uppercase text-green-light mb-3">{children}</span>;
@@ -165,13 +166,19 @@ export default function About() {
             </h2>
             <p className="text-white/50 mt-4 max-w-xl mx-auto">A multidisciplinary team of chartered engineers, architects, and specialists — all under one roof.</p>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-            {about.expertPanel.map((member, i) => (
-              <div key={member.id} className={`reveal reveal-delay-${(i % 4) + 1}`}>
-                <TeamCard member={member} isFounder={member.isFounder} />
-              </div>
-            ))}
-          </div>
+          <ThreeDCarousel 
+            items={about.expertPanel.map(m => ({
+              id: m.id,
+              name: m.name,
+              role: m.role,
+              exp: m.quals, // use quals as description
+              tags: [m.exp], // use exp as tag
+              imageUrl: m.image
+            }))}
+            autoRotate={true}
+            rotateInterval={4000}
+            cardHeight={420}
+          />
         </div>
       </section>
 
@@ -184,21 +191,18 @@ export default function About() {
               Design <span className="gradient-text">Team</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-3 gap-5 max-w-2xl mx-auto">
-            {about.designTeam.map((member, i) => (
-              <div key={member.id}
-                className={`reveal reveal-delay-${i + 1} text-center p-7 rounded-2xl border border-white/8 bg-dark-card
-                             hover:border-green-brand/30 hover:-translate-y-1 transition-all duration-300`}>
-                <div className="w-14 h-14 rounded-xl border border-green-brand/20 bg-green-brand/5 flex items-center justify-center
-                                font-display font-bold text-lg text-green-light mx-auto mb-4">
-                  {member.initials}
-                </div>
-                <div className="font-display font-bold text-sm mb-1">{member.name}</div>
-                <div className="text-xs text-white/50 mb-1">{member.role}</div>
-                <div className="text-xs text-green-brand">{member.exp}</div>
-              </div>
-            ))}
-          </div>
+          <ThreeDCarousel 
+            items={about.designTeam.map(m => ({
+              id: m.id,
+              name: m.name,
+              role: m.role,
+              exp: m.quals || m.exp, // Use experience as desc
+              imageUrl: '' // They use initials
+            }))}
+            autoRotate={true}
+            rotateInterval={4500}
+            cardHeight={300}
+          />
         </div>
       </section>
 
