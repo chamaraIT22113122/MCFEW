@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
-import { useTheme } from '../context/ThemeContext';
+import { getAssetPath } from '../utils/path';
 
 /* ── Reusable section label ── */
 function SLabel({ children }) {
@@ -66,12 +66,12 @@ export default function Home() {
           HERO — full-screen video background
       ══════════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Video BG */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/hero-video.mp4"
-          autoPlay muted loop playsInline
-        />
+        {/* Video Background */}
+        <div className="absolute inset-0 bg-dark-card overflow-hidden">
+          <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover opacity-30">
+            <source src={getAssetPath('/hero-video.mp4')} type="video/mp4" />
+          </video>
+        </div>
         {/* Overlay */}
         <div className="absolute inset-0 hero-video-overlay" />
 
@@ -336,7 +336,7 @@ export default function Home() {
                            bg-dark-card hover:border-green-brand/40 card-hover overflow-hidden group">
                 <div className="md:w-2/5 min-h-48 overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent z-10 opacity-50 md:hidden" />
-                  <img src={p.image || '/hero.png'} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={getAssetPath(p.image || '/hero.png')} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="flex-1 p-8 relative z-20">
                   <span className="text-xs font-display font-bold text-green-light uppercase tracking-wider">{p.category}</span>
@@ -358,7 +358,7 @@ export default function Home() {
                 className={`reveal reveal-delay-${i + 1} rounded-2xl border border-white/8 bg-dark-card hover:border-green-brand/40 card-hover overflow-hidden group flex flex-col`}>
                 <div className="h-48 overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent z-10 opacity-50" />
-                  <img src={p.image || '/hero.png'} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={getAssetPath(p.image || '/hero.png')} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="p-6 flex-1 flex flex-col relative z-20">
                   <span className="text-xs font-display font-bold text-green-light uppercase tracking-wider">{p.category}</span>
@@ -389,7 +389,7 @@ export default function Home() {
                              text-xs font-display font-semibold text-white/50 hover:border-green-brand hover:text-white
                              cursor-default transition-all duration-300 hover:shadow-lg hover:shadow-green-brand/10 hover:-translate-y-1`}>
                 {c.image ? (
-                  <img src={c.image} alt={c.name} className="max-h-full max-w-full object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500" />
+                  <img src={getAssetPath(c.image)} alt={c.name} className="max-h-full max-w-full object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500" />
                 ) : (
                   <span>{c.name}</span>
                 )}
@@ -428,7 +428,7 @@ export default function Home() {
                 {/* Image Header */}
                 <div className="-mx-8 -mt-8 mb-6 h-48 overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent z-10 opacity-60" />
-                  <img src={post.image || '/hero.png'} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={getAssetPath(post.image || '/hero.png')} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 
                 <div className="text-xs text-white/30 mb-1">{post.date}</div>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import { useContent } from '../../context/ContentContext';
+import { getAssetPath } from '../../utils/path';
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -33,7 +34,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
-          <img src="/logo.png" alt="MCFEW Consultants" className="h-10 w-auto rounded-sm" />
+          <img src={getAssetPath('/logo.png')} alt="MCFEW Consultants" className="h-10 w-auto rounded-sm" />
         </Link>
 
         {/* Desktop nav */}

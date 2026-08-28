@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useContent } from '../context/ContentContext';
 import { useTheme } from '../context/ThemeContext';
+import { getAssetPath } from '../utils/path';
 
 const Field = ({ label, name, value, onChange, type = 'text', rows }) => (
   <div>
@@ -432,7 +433,7 @@ export default function Admin() {
       <div className="min-h-screen flex items-center justify-center bg-dark-1 px-4">
         <div className="w-full max-w-sm">
           <div className="text-center mb-8">
-            <img src="/logo.png" alt="MCFEW" className="h-14 mx-auto mb-4 rounded-md" />
+            <img src={getAssetPath('/logo.png')} alt="MCFEW" className="h-14 mx-auto mb-4 rounded-md" />
             <h1 className="font-display font-black text-2xl">Admin Panel</h1>
             <p className="text-white/40 text-sm mt-1">MCFEW Consultants</p>
           </div>
@@ -463,7 +464,7 @@ export default function Admin() {
       <aside className="admin-sidebar w-64 flex-shrink-0 border-r border-white/8 flex flex-col fixed top-0 left-0 h-screen z-40">
         {/* Logo */}
         <div className="px-6 py-6 border-b border-white/8">
-          <img src="/logo.png" alt="MCFEW" className="h-9 rounded-sm" />
+          <img src={getAssetPath('/logo.png')} alt="MCFEW" className="h-9 rounded-sm" />
           <div className="text-xs text-white/30 mt-1 font-display">Admin Panel</div>
         </div>
 

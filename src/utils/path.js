@@ -1,0 +1,1 @@
+export function getAssetPath(path) { if (!path) return ''; if (path.startsWith('data:')) return path; if (path.startsWith('http')) return path; return path.startsWith('/') ? import.meta.env.BASE_URL + path.slice(1) : path; }

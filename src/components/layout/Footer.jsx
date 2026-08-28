@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useContent } from '../../context/ContentContext';
+import { getAssetPath } from '../../utils/path';
 
 export default function Footer() {
   const { content } = useContent();
@@ -25,9 +26,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/8">
 
           {/* Brand */}
-          <div>
-            <img src="/logo.png" alt="MCFEW Consultants" className="h-16 w-auto mb-5 rounded-md" />
-            <p className="text-sm text-white/50 leading-relaxed mb-6">{settings.footerDesc}</p>
+          <div className="col-span-1 md:col-span-4">
+            <img src={getAssetPath('/logo.png')} alt="MCFEW Consultants" className="h-16 w-auto mb-5 rounded-md" />
+            <p className="text-white/60 text-sm leading-relaxed max-w-sm mb-6">{settings.footerDesc}</p>
             <div className="flex gap-3">
               {[
                 { href: settings.facebook,  label: 'Facebook',  icon: 'f' },
