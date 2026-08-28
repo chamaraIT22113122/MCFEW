@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
 import { getAssetPath } from '../utils/path';
-import CountUp from 'react-countup';
 import ThreeDCarousel from '../components/ThreeDCarousel';
+import AnimatedCounter from '../components/AnimatedCounter';
 
 function SLabel({ children }) {
   return <span className="inline-block text-xs font-display font-bold tracking-widest uppercase text-green-light mb-3">{children}</span>;
@@ -137,7 +137,7 @@ export default function About() {
             ].map((stat, i) => (
               <div key={i} className="flex flex-col items-center justify-center text-center p-4">
                 <div className="font-display font-black text-4xl lg:text-5xl text-white mb-2">
-                  <span>{stat.num}</span>
+                  <AnimatedCounter value={stat.num} duration={2} />
                   <span className="text-green-brand">{stat.suffix}</span>
                 </div>
                 <div className="text-xs font-display font-bold text-white/50 uppercase tracking-widest">{stat.label}</div>
