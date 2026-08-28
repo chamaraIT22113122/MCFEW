@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
+import { getAssetPath } from '../utils/path';
 
 function SLabel({ children }) {
   return <span className="inline-block text-xs font-display font-bold tracking-widest uppercase text-green-light mb-3">{children}</span>;
@@ -59,7 +59,7 @@ export default function Projects() {
             <div key={p.id} className="reveal rounded-2xl border border-green-brand/30 bg-dark-card overflow-hidden flex flex-col lg:flex-row group">
               <div className="lg:w-2/5 min-h-[300px] lg:min-h-full overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-dark-card to-transparent z-10 opacity-70 lg:opacity-40" />
-                <img src={p.image || '/hero.png'} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0" />
+                <img src={getAssetPath(p.image || '/hero.png')} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0" />
               </div>
               <div className="flex-1 p-10 relative z-20 flex flex-col justify-center">
                 <span className="w-fit inline-block text-xs font-display font-bold text-green-light uppercase tracking-wider mb-3 px-3 py-1 rounded-full bg-green-brand/10 border border-green-brand/20">
@@ -118,7 +118,7 @@ export default function Projects() {
                              hover:border-green-brand/40 card-hover overflow-hidden flex flex-col`}>
                 <div className="h-48 overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent z-10 opacity-60" />
-                  <img src={p.image || '/hero.png'} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={getAssetPath(p.image || '/hero.png')} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="p-7 flex-1 flex flex-col relative z-20">
                   <span className="text-xs font-display font-bold text-green-light uppercase tracking-wider">{p.category}</span>

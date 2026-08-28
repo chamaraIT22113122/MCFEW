@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
+import { getAssetPath } from '../utils/path';
 
 function SLabel({ children }) {
   return <span className="inline-block text-xs font-display font-bold tracking-widest uppercase text-green-light mb-3">{children}</span>;
@@ -26,7 +26,7 @@ function TeamCard({ member, isFounder }) {
       <div className={`w-16 h-16 rounded-2xl flex items-center justify-center font-display font-black text-xl mb-4 overflow-hidden
                         ${isFounder ? 'bg-green-brand text-white' : 'bg-green-brand/10 text-green-light border border-green-brand/20'}`}>
         {member.image ? (
-          <img src={member.image} alt={member.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" />
+          <img src={getAssetPath(member.image)} alt={member.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" />
         ) : (
           member.name.split(' ').map(n=>n[0]).join('').substring(0,2).toUpperCase()
         )}

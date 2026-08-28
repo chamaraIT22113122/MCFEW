@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
+import { getAssetPath } from '../utils/path';
 
 function SLabel({ children }) {
   return <span className="inline-block text-xs font-display font-bold tracking-widest uppercase text-green-light mb-3">{children}</span>;
@@ -57,7 +57,7 @@ export default function Blog() {
                                hover:border-green-brand/40 overflow-hidden card-hover`}>
                   <div className="h-64 overflow-hidden relative">
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent z-10 opacity-60" />
-                    <img src={post.image || '/hero.png'} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0" />
+                    <img src={getAssetPath(post.image || '/hero.png')} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0" />
                   </div>
                   <div className="p-8">
                     <div className="flex items-center gap-3 mb-4">
