@@ -441,7 +441,7 @@ export default function Home() {
                 <Link to="/blog" className="text-sm font-display font-semibold text-green-light hover:text-green-brand transition-colors inline-flex items-center gap-1">
                   Read Article <span className="transition-transform group-hover:translate-x-1">→</span>
                 </Link>
-              </div>
+              </GlowCard>
             ))}
           </div>
         </div>
