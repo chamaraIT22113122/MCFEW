@@ -91,7 +91,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-20 items-start">
             <div className="reveal">
               <SLabel>Our Story</SLabel>
-              <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight mb-6">
+              <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl tracking-tight mb-6">
                 Engineering <span className="gradient-text">Excellence</span> Since 2021
               </h2>
               <p className="text-white/65 leading-relaxed mb-6">{about.story1}</p>
@@ -129,7 +129,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 reveal">
             <SLabel>Our Process</SLabel>
-            <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
               Our <span className="gradient-text">Design Process</span>
             </h2>
           </div>
@@ -161,7 +161,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14 reveal">
             <SLabel>Our Team</SLabel>
-            <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
               Expert <span className="gradient-text">Panel</span>
             </h2>
             <p className="text-white/50 mt-4 max-w-xl mx-auto">A multidisciplinary team of chartered engineers, architects, and specialists — all under one roof.</p>
@@ -187,7 +187,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14 reveal">
             <SLabel>Design & QA Team</SLabel>
-            <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
               Design <span className="gradient-text">Team</span>
             </h2>
           </div>

@@ -58,7 +58,7 @@ export default function Consultation() {
             {/* Left: Info */}
             <div className="reveal">
               <SLabel>Reach Us</SLabel>
-              <h2 className="font-display font-extrabold text-4xl tracking-tight mb-4">
+              <h2 className="uppercase font-display font-extrabold text-4xl tracking-tight mb-4">
                 Let's Start a <span className="gradient-text">Conversation</span>
               </h2>
               <p className="text-white/60 mb-8 leading-relaxed">Whether you are a developer, investor, architect, or contractor — MCFEW is ready to assist with expert MEP engineering guidance tailored to your project.</p>
@@ -169,7 +169,7 @@ export default function Consultation() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14 reveal">
             <SLabel>Why Choose Us</SLabel>
-            <h2 className="font-display font-extrabold text-4xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl tracking-tight">
               Why <span className="gradient-text">MCFEW</span>?
             </h2>
             <p className="text-white/50 mt-4 max-w-lg mx-auto">Backed by decades of hands-on MEP experience in Sri Lanka's most landmark developments.</p>

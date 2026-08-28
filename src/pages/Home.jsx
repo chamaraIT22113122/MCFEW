@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
 import { getAssetPath } from '../utils/path';
+import { InfiniteMarquee } from '../components/InfiniteMarquee';
 
 /* ── Reusable section label ── */
 function SLabel({ children }) {
@@ -173,7 +174,7 @@ export default function Home() {
             {/* Left text */}
             <div className="reveal">
               <SLabel>About MCFEW</SLabel>
-              <h2 className="font-display font-extrabold text-4xl lg:text-5xl leading-tight tracking-tight mb-6">
+              <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl leading-tight tracking-tight mb-6">
                 {home.aboutTitle.split('Three').map((part, i) => i === 0
                   ? <span key={i}>{part}Three </span>
                   : <span key={i} className="gradient-text">{part}</span>
@@ -223,7 +224,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="text-center mb-16 reveal">
             <SLabel>What We Do</SLabel>
-            <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
               Comprehensive <span className="gradient-text">MEP Services</span>
             </h2>
             <p className="text-white/50 mt-4 max-w-xl mx-auto">From high-rise towers to industrial plants — we engineer the systems that power, cool, and protect your building.</p>
@@ -285,7 +286,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 reveal">
             <SLabel>Our Workflow</SLabel>
-            <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
               How We <span className="gradient-text">Work</span>
             </h2>
           </div>
@@ -317,7 +318,7 @@ export default function Home() {
           <div className="flex items-end justify-between mb-12 reveal">
             <div>
               <SLabel>Portfolio</SLabel>
-              <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
+              <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
                 Project <span className="gradient-text">Involvement</span>
               </h2>
             </div>
@@ -378,23 +379,25 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-10 reveal">
             <SLabel>Trusted By</SLabel>
-            <h2 className="font-display font-extrabold text-3xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-3xl tracking-tight">
               Our <span className="gradient-text">Clients</span>
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {(projects.clientLogos || []).map((c, i) => (
-              <div key={c.id || i}
-                className={`reveal reveal-delay-${(i % 5) + 1} p-6 h-28 flex items-center justify-center rounded-xl border border-white/8 bg-dark-card text-center
-                             text-xs font-display font-semibold text-white/50 hover:border-green-brand hover:text-white
-                             cursor-default transition-all duration-300 hover:shadow-lg hover:shadow-green-brand/10 hover:-translate-y-1`}>
-                {c.image ? (
-                  <img src={getAssetPath(c.image)} alt={c.name} className="max-h-full max-w-full object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500" />
-                ) : (
-                  <span>{c.name}</span>
-                )}
-              </div>
-            ))}
+          <div className="mt-8">
+            <InfiniteMarquee baseVelocity={30} direction={1}>
+              {(projects.clientLogos || []).map((c, i) => (
+                <div key={c.id || i}
+                  className={`p-6 h-28 w-48 flex items-center justify-center rounded-xl border border-white/8 bg-dark-card text-center
+                               text-xs font-display font-semibold text-white/50 hover:border-green-brand hover:text-white
+                               cursor-default transition-all duration-300 hover:shadow-lg hover:shadow-green-brand/10`}>
+                  {c.image ? (
+                    <img src={getAssetPath(c.image)} alt={c.name} className="max-h-full max-w-full object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500" />
+                  ) : (
+                    <span>{c.name}</span>
+                  )}
+                </div>
+              ))}
+            </InfiniteMarquee>
           </div>
         </div>
       </section>
@@ -407,7 +410,7 @@ export default function Home() {
           <div className="flex items-end justify-between mb-12 reveal">
             <div>
               <SLabel>Knowledge Hub</SLabel>
-              <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
+              <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
                 MCFEW <span className="gradient-text">Blog</span>
               </h2>
             </div>
@@ -455,7 +458,7 @@ export default function Home() {
         <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-green-brand/5 animate-pulse-glow" />
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <SLabel>Ready to Start?</SLabel>
-          <h2 className="font-display font-black text-4xl lg:text-5xl tracking-tight mb-4">
+          <h2 className="uppercase font-display font-black text-4xl lg:text-5xl tracking-tight mb-4">
             Get Your Free MEP<br />Consultation Today
           </h2>
           <p className="text-white/60 text-lg mb-10">Our expert team is ready to evaluate your project requirements and provide a no-obligation consultation.</p>

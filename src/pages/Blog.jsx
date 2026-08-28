@@ -67,7 +67,7 @@ export default function Blog() {
                         {post.category}
                       </span>
                     </div>
-                    <h2 className="font-display font-bold text-2xl mb-3 leading-tight">{post.title}</h2>
+                    <h2 className="uppercase font-display font-bold text-2xl mb-3 leading-tight">{post.title}</h2>
                     <p className="text-white/60 leading-relaxed mb-6">{post.content}</p>
                     <button className="inline-flex items-center gap-2 text-sm font-display font-semibold text-green-light hover:text-green-brand transition-colors">
                       Read Full Article <span className="group-hover:translate-x-1 transition-transform">→</span>

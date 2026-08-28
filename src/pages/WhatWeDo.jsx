@@ -70,7 +70,7 @@ export default function WhatWeDo() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 reveal">
             <SLabel>Three Major Pillars</SLabel>
-            <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
               Our <span className="gradient-text">Core Services</span>
             </h2>
           </div>
@@ -103,7 +103,7 @@ export default function WhatWeDo() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-14 reveal">
             <SLabel>Electrical Scope</SLabel>
-            <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
               Electrical & <span className="gradient-text">ELV Systems</span>
             </h2>
             <p className="text-white/55 mt-4 max-w-xl">From basic power distribution to complex smart building systems — we design them all.</p>
@@ -127,7 +127,7 @@ export default function WhatWeDo() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-14 reveal">
             <SLabel>Mechanical Scope</SLabel>
-            <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
               Mechanical & <span className="gradient-text">Plumbing Systems</span>
             </h2>
             <p className="text-white/55 mt-4 max-w-xl">HVAC, fire protection, plumbing — engineered for efficiency, safety, and code compliance.</p>
@@ -151,7 +151,7 @@ export default function WhatWeDo() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14 reveal">
             <SLabel>Our Values</SLabel>
-            <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
               Core <span className="gradient-text">Values</span>
             </h2>
           </div>
@@ -174,7 +174,7 @@ export default function WhatWeDo() {
         <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(26,107,60,0.08) 0%, transparent 60%)' }} />
         <div className="relative max-w-2xl mx-auto px-6">
           <SLabel>Let's Work Together</SLabel>
-          <h2 className="font-display font-black text-4xl mb-4 tracking-tight">
+          <h2 className="uppercase font-display font-black text-4xl mb-4 tracking-tight">
             Ready to Engineer Your <span className="gradient-text">Next Project?</span>
           </h2>
           <p className="text-white/60 mb-8">Get a free consultation from our expert MEP team. No commitment required.</p>

@@ -52,7 +52,7 @@ export default function Projects() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-10 reveal">
             <SLabel>Flagship Project</SLabel>
-            <h2 className="font-display font-extrabold text-4xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl tracking-tight">
               Victoria Golf Course & <span className="gradient-text">Country Resort</span>
             </h2>
           </div>
@@ -93,7 +93,7 @@ export default function Projects() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-10 reveal">
             <SLabel>Portfolio</SLabel>
-            <h2 className="font-display font-extrabold text-4xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl tracking-tight">
               All <span className="gradient-text">Projects</span>
             </h2>
           </div>
@@ -144,7 +144,7 @@ export default function Projects() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12 reveal">
             <SLabel>Specialist Services</SLabel>
-            <h2 className="font-display font-extrabold text-4xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl tracking-tight">
               Energy Auditing & <span className="gradient-text">Certification</span>
             </h2>
           </div>
@@ -166,7 +166,7 @@ export default function Projects() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12 reveal">
             <SLabel>Involvement</SLabel>
-            <h2 className="font-display font-extrabold text-4xl tracking-tight">
+            <h2 className="uppercase font-display font-extrabold text-4xl tracking-tight">
               Our <span className="gradient-text">Clients</span>
             </h2>
           </div>
@@ -198,7 +198,7 @@ export default function Projects() {
         <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(26,107,60,0.08) 0%, transparent 60%)' }} />
         <div className="relative max-w-2xl mx-auto px-6">
           <SLabel>Your Project Next</SLabel>
-          <h2 className="font-display font-black text-4xl mb-4 tracking-tight">
+          <h2 className="uppercase font-display font-black text-4xl mb-4 tracking-tight">
             Ready to Add Your Project<br />to Our <span className="gradient-text">Portfolio?</span>
           </h2>
           <p className="text-white/60 mb-8">Get expert MEP engineering consultation for your development — from concept to commissioning.</p>
