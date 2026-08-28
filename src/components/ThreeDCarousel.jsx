@@ -32,7 +32,7 @@ export default function ThreeDCarousel({ items, autoRotate = true, rotateInterva
         className="relative w-full max-w-[320px] h-full transition-transform duration-1000 ease-out"
         style={{ 
           transformStyle: 'preserve-3d',
-          transform: 'translateZ(-' + radius + 'px) rotateY(' + (currentIndex * (-360 / length)) + 'deg)'
+          transform: `translateZ(-${radius}px) rotateY(${currentIndex * (-360 / length)}deg)`
         }}
       >
         {items.map((item, i) => {
@@ -49,12 +49,12 @@ export default function ThreeDCarousel({ items, autoRotate = true, rotateInterva
           return (
             <div
               key={item.id || i}
-              className={bsolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[320px] 
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[320px] 
                           rounded-2xl border transition-all duration-700 overflow-hidden bg-dark-card
-                          }
+                          ${isActive ? 'border-green-brand/50 shadow-xl shadow-green-brand/10 opacity-100' : 'border-white/5 opacity-40 blur-[2px]'}`}
               style={{
                 height: cardHeight,
-                transform: 'rotateY(' + rotateY + 'deg) translateZ(' + radius + 'px)',
+                transform: `rotateY(${rotateY}deg) translateZ(${radius}px)`,
               }}
             >
               <div className="h-48 relative overflow-hidden bg-black/50">
@@ -97,13 +97,13 @@ export default function ThreeDCarousel({ items, autoRotate = true, rotateInterva
           onClick={handlePrev} 
           className="pointer-events-auto w-12 h-12 rounded-full border border-white/10 bg-dark-2 text-white/50 hover:text-green-brand hover:border-green-brand/50 flex items-center justify-center transition-colors"
         >
-          ?
+          &larr;
         </button>
         <button 
           onClick={handleNext}
           className="pointer-events-auto w-12 h-12 rounded-full border border-white/10 bg-dark-2 text-white/50 hover:text-green-brand hover:border-green-brand/50 flex items-center justify-center transition-colors"
         >
-          ?
+          &rarr;
         </button>
       </div>
     </div>
