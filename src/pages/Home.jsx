@@ -310,7 +310,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════
-          FEATURED PROJECTS
+          PROJECT INVOLVEMENT
       ══════════════════════════════════════════ */}
       <section className="py-28 bg-dark-1">
         <div className="max-w-7xl mx-auto px-6">
@@ -318,7 +318,7 @@ export default function Home() {
             <div>
               <SLabel>Portfolio</SLabel>
               <h2 className="font-display font-extrabold text-4xl lg:text-5xl tracking-tight">
-                Featured <span className="gradient-text">Projects</span>
+                Project <span className="gradient-text">Involvement</span>
               </h2>
             </div>
             <Link to="/projects"
