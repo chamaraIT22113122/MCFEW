@@ -137,7 +137,7 @@ export default function About() {
             ].map((stat, i) => (
               <div key={i} className="flex flex-col items-center justify-center text-center p-4">
                 <div className="font-display font-black text-4xl lg:text-5xl text-white mb-2">
-                  <CountUp end={stat.num} duration={2.5} enableScrollSpy scrollSpyOnce />
+                  <span>{stat.num}</span>
                   <span className="text-green-brand">{stat.suffix}</span>
                 </div>
                 <div className="text-xs font-display font-bold text-white/50 uppercase tracking-widest">{stat.label}</div>
