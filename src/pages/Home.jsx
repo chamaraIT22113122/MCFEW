@@ -68,7 +68,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 bg-dark-card overflow-hidden">
-          <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover opacity-30">
+          <video autoPlay loop muted playsInline preload="auto" poster={getAssetPath('/hero.png')} className="absolute top-0 left-0 w-full h-full object-cover opacity-30">
             <source src={getAssetPath('/hero-video.mp4')} type="video/mp4" />
           </video>
         </div>
