@@ -384,7 +384,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="mt-8">
-            <InfiniteMarquee baseVelocity={30} direction={1}>
+            <InfiniteMarquee baseVelocity={3} direction={1}>
               {(projects.clientLogos || []).map((c, i) => (
                 <div key={c.id || i}
                   className={`p-6 h-28 w-48 flex items-center justify-center rounded-xl border border-white/8 bg-dark-card text-center
