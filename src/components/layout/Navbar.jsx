@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { useTheme } from '../../context/ThemeContext';
 import { useContent } from '../../context/ContentContext';
 import { getAssetPath } from '../../utils/path';
 
 export default function Navbar() {
-  const { theme, toggleTheme } = useTheme();
   const { content } = useContent();
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
@@ -59,16 +57,6 @@ export default function Navbar() {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
-          {/* Theme toggle */}
-          <button
-            onClick={toggleTheme}
-            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg
-                       hover:border-green-brand hover:bg-green-brand/10 transition-all duration-200 hover:scale-110"
-          >
-            {theme === 'dark' ? '☀️' : '🌙'}
-          </button>
-
           {/* CTA */}
           <Link
             to="/consultation"

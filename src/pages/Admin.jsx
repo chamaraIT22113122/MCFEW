@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useContent } from '../context/ContentContext';
-import { useTheme } from '../context/ThemeContext';
 import { getAssetPath } from '../utils/path';
 
 const Field = ({ label, name, value, onChange, type = 'text', rows }) => (
@@ -384,7 +383,6 @@ function ConsultationEditor({ data, onSave }) {
 ══════════════════════════════════════════════════════ */
 export default function Admin() {
   const { content, updateSection, resetContent } = useContent();
-  const { theme, toggleTheme } = useTheme();
   const [loggedIn, setLoggedIn] = useState(() => sessionStorage.getItem('mcfew_admin') === '1');
   const [pw, setPw] = useState('');
   const [pwError, setPwError] = useState('');
@@ -484,10 +482,6 @@ export default function Admin() {
 
         {/* Bottom actions */}
         <div className="p-4 border-t border-white/8 flex flex-col gap-2">
-          <button onClick={toggleTheme}
-            className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm text-white/50 hover:text-white hover:bg-white/5 w-full transition-all">
-            <span>{theme === 'dark' ? '☀️' : '🌙'}</span> Toggle Theme
-          </button>
           <button onClick={handleReset}
             className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm text-red-400 hover:bg-red-500/10 w-full transition-all">
             <span>🔄</span> Reset to Defaults
